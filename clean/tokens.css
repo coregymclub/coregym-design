@@ -1,0 +1,74 @@
+/*
+ * Clean — design tokens
+ *
+ * Editorial / Nike-Run-style alternative to Luxe Noir.
+ * Opt-in via the `clean` class on a wrapping element (page or root).
+ * Add `clean light` for light mode.
+ *
+ * Source: claude.ai/design handoff (Design System v0.1, 2026-05-07).
+ */
+
+.clean {
+  /* Surfaces — dark (default) */
+  --clean-bg: #17151a;
+  --clean-bg-raise: #1f1c22;
+  --clean-surface: rgba(255, 247, 238, 0.04);
+  --clean-surface-hi: rgba(255, 247, 238, 0.07);
+  --clean-border: rgba(255, 255, 255, 0.07);
+  --clean-border-hi: rgba(255, 255, 255, 0.14);
+  --clean-text: #f4f1ec;
+  --clean-text-dim: rgba(244, 241, 236, 0.58);
+  --clean-text-mute: rgba(244, 241, 236, 0.32);
+
+  /* Accents — used sparingly, never structural */
+  --clean-accent: #dc3636;
+  --clean-live: #34d399;
+  --clean-warn: #f59e0b;
+  --clean-error: #ef4444;
+
+  /* Type */
+  --clean-display: "DM Sans", system-ui, sans-serif;
+  --clean-body: "Inter Tight", system-ui, sans-serif;
+  --clean-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Spacing — 4px base */
+  --clean-space-xs: 4px;
+  --clean-space-sm: 8px;
+  --clean-space-md: 14px;
+  --clean-space-lg: 22px;
+  --clean-space-xl: 28px;
+  --clean-space-2xl: 56px;
+
+  /* Radius */
+  --clean-radius-input: 8px;
+  --clean-radius-button: 14px;
+  --clean-radius-card: 18px;
+  --clean-radius-sheet: 22px;
+  --clean-radius-modal: 28px;
+  --clean-radius-pill: 999px;
+
+  /* Motion */
+  --clean-ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --clean-ease-tap: cubic-bezier(0.4, 0, 0.2, 1);
+  --clean-dur-tap: 120ms;
+  --clean-dur-fade: 200ms;
+  --clean-dur-view: 320ms;
+  --clean-dur-sheet: 360ms;
+
+  background: var(--clean-bg);
+  color: var(--clean-text);
+  font-family: var(--clean-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.clean.light {
+  --clean-bg: #f5f3ef;
+  --clean-bg-raise: #ffffff;
+  --clean-surface: #ffffff;
+  --clean-surface-hi: #ece9e3;
+  --clean-border: rgba(0, 0, 0, 0.07);
+  --clean-border-hi: rgba(0, 0, 0, 0.14);
+  --clean-text: #15131a;
+  --clean-text-dim: rgba(21, 19, 26, 0.58);
+  --clean-text-mute: rgba(21, 19, 26, 0.32);
+}
