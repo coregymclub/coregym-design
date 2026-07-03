@@ -27,9 +27,9 @@
   --clean-error: #ef4444;
 
   /* Type */
-  --clean-display: "DM Sans", system-ui, sans-serif;
-  --clean-body: "Inter Tight", system-ui, sans-serif;
-  --clean-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --clean-display: "Geist", system-ui, sans-serif;
+  --clean-body: "Geist", system-ui, sans-serif;
+  --clean-mono: "Geist Mono", ui-monospace, monospace;
 
   /* Spacing — 4px base */
   --clean-space-xs: 4px;
