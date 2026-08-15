@@ -18,15 +18,46 @@
   --clean-border-hi: rgba(255, 255, 255, 0.14);
   --clean-text: #f4f1ec;
   --clean-text-dim: rgba(244, 241, 236, 0.58);
-  --clean-text-mute: rgba(244, 241, 236, 0.32);
+  /* mute är dekorativ (streck, inaktiva etiketter) och når medvetet inte AA
+     för brödtext — låg den på 0.32 föll den till 2.7:1. Sätt aldrig
+     meningsbärande text i mute. */
+  --clean-text-mute: rgba(244, 241, 236, 0.42);
 
-  /* Accents — used sparingly, never structural */
+  /* Accents — used sparingly, never structural.
+     OBS: statusfärgerna nedan gäller MÖRKT läge. `.clean.light` väljer om dem —
+     samma hex mot ljus bakgrund gav 1.7–1.9:1, alltså osynligt. Rör inte den
+     ena uppsättningen utan att räkna om den andra. */
   --clean-accent: #dc3636;
   --clean-live: #34d399;
   --clean-warn: #f59e0b;
   --clean-error: #ef4444;
 
-  /* Type */
+  /* Focus — synligt tangentbordsfokus. Använd `outline: var(--clean-focus-ring)`
+     + `outline-offset: var(--clean-focus-offset)`, ALDRIG Tailwinds `ring`:
+     klassnamnet `ring` krockar med utilityn och ger en blå 3px-halo. */
+  --clean-focus: #ffffff;
+  --clean-focus-ring: 2px solid var(--clean-focus);
+  --clean-focus-offset: 2px;
+
+  /* Elevation — mörkt läge bär djup med kant + ljusare yta, inte tunga skuggor.
+     Skuggorna här är därför diskreta och används bara på lyft lager. */
+  --clean-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.28);
+  --clean-shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.44);
+  --clean-shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.52);
+
+  /* Z-index — hela appens lagerordning. Hitta aldrig på egna värden;
+     en hårdkodad 9999 gör nästa lager omöjligt att lägga ovanpå. */
+  --clean-z-base: 0;
+  --clean-z-sticky: 10;
+  --clean-z-nav: 20;
+  --clean-z-overlay: 30;
+  --clean-z-sheet: 40;
+  --clean-z-modal: 50;
+  --clean-z-toast: 60;
+
+  /* Type — Geist + Geist Mono, self-hostade i main.css (SIL OFL, se /fonts/OFL.txt).
+     Låg tidigare kvar på DM Sans/Inter Tight/IBM Plex Mono, som aldrig laddats
+     i appen — alla Clean-sidor föll därför tillbaka på system-ui. */
   --clean-display: "Geist", system-ui, sans-serif;
   --clean-body: "Geist", system-ui, sans-serif;
   --clean-mono: "Geist Mono", ui-monospace, monospace;
@@ -69,6 +100,20 @@
   --clean-border: rgba(0, 0, 0, 0.07);
   --clean-border-hi: rgba(0, 0, 0, 0.14);
   --clean-text: #15131a;
-  --clean-text-dim: rgba(21, 19, 26, 0.58);
-  --clean-text-mute: rgba(21, 19, 26, 0.32);
+  --clean-text-dim: rgba(21, 19, 26, 0.66);
+  --clean-text-mute: rgba(21, 19, 26, 0.5);
+
+  /* Egna statusfärger för ljust läge. De mörka tonerna är valda mot mörk
+     bakgrund och klarar 1.7–3.4:1 här — oläsligt. Dessa fyra ligger alla
+     över 4.5:1 mot ALLA tre ljusa ytor (bg, surface #fff, surface-hi). */
+  --clean-accent: #c62828;
+  --clean-live: #047857;
+  --clean-warn: #8a5104;
+  --clean-error: #c81e1e;
+
+  --clean-focus: #15131a;
+
+  --clean-shadow-card: 0 1px 2px rgba(21, 19, 26, 0.08);
+  --clean-shadow-sheet: 0 -8px 32px rgba(21, 19, 26, 0.12);
+  --clean-shadow-modal: 0 16px 48px rgba(21, 19, 26, 0.18);
 }
